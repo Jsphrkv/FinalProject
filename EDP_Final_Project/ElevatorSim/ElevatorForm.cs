@@ -249,6 +249,7 @@ namespace ElevatorSim
             GetStartButton()!.Click += (_, _) =>
             {
                 _systemRunning = true;
+                _elevator.Resume();
                 GetPauseButton()!.Text = "⏸  PAUSE";
                 SetInputEnabled(true);
                 UpdateStatusLabels();
@@ -256,12 +257,22 @@ namespace ElevatorSim
             GetPauseButton()!.Click += (_, _) =>
             {
                 _systemRunning = !_systemRunning;
-                GetPauseButton()!.Text = _systemRunning ? "⏸  PAUSE" : "▶  RESUME";
+                if (_systemRunning)
+                {
+                    _elevator.Resume();
+                    GetPauseButton()!.Text = "⏸  PAUSE";
+                }
+                else
+                {
+                    _elevator.Pause();
+                    GetPauseButton()!.Text = "▶  RESUME";
+                }
                 SetInputEnabled(_systemRunning);
                 UpdateStatusLabels();
             };
             GetStopButton()!.Click += (_, _) =>
             {
+                _elevator.Pause();
                 _systemRunning = false;
                 _doorsOpen = false;
                 _doorOpenPct = 0f;

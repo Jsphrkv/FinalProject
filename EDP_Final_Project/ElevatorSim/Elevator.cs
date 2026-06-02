@@ -37,6 +37,7 @@ namespace ElevatorSim
 
         private bool _isMoving = false;
         private bool _doorsAreOpen = false;
+        private bool _isPaused = false;
 
         public event EventHandler<ElevatorEventArgs>? FloorChanged;
         public event EventHandler<ElevatorEventArgs>? DirectionChanged;
@@ -66,7 +67,7 @@ namespace ElevatorSim
                 OnRequestAdded(new ElevatorEventArgs(floor, _direction, $"Request added for floor {floor}"));
             }
 
-            if (!_isMoving && !_doorsAreOpen)
+            if (!_isPaused && !_isMoving && !_doorsAreOpen)
                 ProcessNextRequest();
         }
 
@@ -106,6 +107,30 @@ namespace ElevatorSim
             int target = _currentFloor - 1;
             if (target < 1) return;
             RequestFloor(target);
+        }
+
+        public void Pause()
+        {
+            if (_isPaused) return;
+            _isPaused = true;
+            if (_isMoving)
+            {
+                _movementTimer.Stop();
+            }
+        }
+
+        public void Resume()
+        {
+            if (!_isPaused) return;
+            _isPaused = false;
+            if (_activeRequests.Count > 0 && !_isMoving && !_doorsAreOpen)
+            {
+                ProcessNextRequest();
+            }
+            else if (_isMoving)
+            {
+                _movementTimer.Start();
+            }
         }
 
         private void ProcessNextRequest()

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\edp_assignment\\elevatorsim\\ElevatorSim.csproj": {}
+    "D:\\FinalProject\\EDP_Final_Project\\elevatorsim\\ElevatorSim.csproj": {}
   },
   "projects": {
-    "D:\\edp_assignment\\elevatorsim\\ElevatorSim.csproj": {
+    "D:\\FinalProject\\EDP_Final_Project\\elevatorsim\\ElevatorSim.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\edp_assignment\\elevatorsim\\ElevatorSim.csproj",
+        "projectUniqueName": "D:\\FinalProject\\EDP_Final_Project\\elevatorsim\\ElevatorSim.csproj",
         "projectName": "ElevatorSim",
-        "projectPath": "D:\\edp_assignment\\elevatorsim\\ElevatorSim.csproj",
+        "projectPath": "D:\\FinalProject\\EDP_Final_Project\\elevatorsim\\ElevatorSim.csproj",
         "packagesPath": "C:\\Users\\lenle\\.nuget\\packages\\",
-        "outputPath": "D:\\edp_assignment\\elevatorsim\\obj\\",
+        "outputPath": "D:\\FinalProject\\EDP_Final_Project\\elevatorsim\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\lenle\\AppData\\Roaming\\NuGet\\NuGet.Config",
