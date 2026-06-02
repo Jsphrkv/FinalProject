@@ -1,0 +1,14 @@
+D:\edp_assignment\ElevatorSim\bin\Debug\net8.0-windows\ElevatorSim.exe
+D:\edp_assignment\ElevatorSim\bin\Debug\net8.0-windows\ElevatorSim.deps.json
+D:\edp_assignment\ElevatorSim\bin\Debug\net8.0-windows\ElevatorSim.runtimeconfig.json
+D:\edp_assignment\ElevatorSim\bin\Debug\net8.0-windows\ElevatorSim.dll
+D:\edp_assignment\ElevatorSim\bin\Debug\net8.0-windows\ElevatorSim.pdb
+D:\edp_assignment\ElevatorSim\obj\Debug\net8.0-windows\ElevatorSim.GeneratedMSBuildEditorConfig.editorconfig
+D:\edp_assignment\ElevatorSim\obj\Debug\net8.0-windows\ElevatorSim.AssemblyInfoInputs.cache
+D:\edp_assignment\ElevatorSim\obj\Debug\net8.0-windows\ElevatorSim.AssemblyInfo.cs
+D:\edp_assignment\ElevatorSim\obj\Debug\net8.0-windows\ElevatorSim.csproj.CoreCompileInputs.cache
+D:\edp_assignment\ElevatorSim\obj\Debug\net8.0-windows\ElevatorSim.dll
+D:\edp_assignment\ElevatorSim\obj\Debug\net8.0-windows\refint\ElevatorSim.dll
+D:\edp_assignment\ElevatorSim\obj\Debug\net8.0-windows\ElevatorSim.pdb
+D:\edp_assignment\ElevatorSim\obj\Debug\net8.0-windows\ElevatorSim.genruntimeconfig.cache
+D:\edp_assignment\ElevatorSim\obj\Debug\net8.0-windows\ref\ElevatorSim.dll

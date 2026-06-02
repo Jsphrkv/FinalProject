@@ -1,0 +1,253 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\edp_assignment\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\edp_assignment\\ElevatorSim\\Elevator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:ElevatorSim\\Elevator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\edp_assignment\\ElevatorSim\\ElevatorForm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:ElevatorSim\\ElevatorForm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\edp_assignment\\ElevatorSim\\ElevatorForm.Designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:ElevatorSim\\ElevatorForm.Designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\edp_assignment\\ElevatorSim\\ElevatorSim.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:ElevatorSim\\ElevatorSim.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\edp_assignment\\ElevatorSim\\README.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:ElevatorSim\\README.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\edp_assignment\\ElevatorSim\\README_DELIVERY.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:ElevatorSim\\README_DELIVERY.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\edp_assignment\\ElevatorSim\\DELIVERY_SUMMARY.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:ElevatorSim\\DELIVERY_SUMMARY.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\edp_assignment\\ElevatorSim\\WELCOME.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:ElevatorSim\\WELCOME.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\edp_assignment\\ElevatorSim\\README_NEW.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:ElevatorSim\\README_NEW.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\edp_assignment\\ElevatorSim\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:ElevatorSim\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\edp_assignment\\ElevatorSim\\FINAL_DELIVERY_REPORT.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:ElevatorSim\\FINAL_DELIVERY_REPORT.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\edp_assignment\\ElevatorSim\\DELIVERY_SUMMARY.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:ElevatorSim\\DELIVERY_SUMMARY.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\edp_assignment\\ElevatorSim\\ELEVATOR_FIXED.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:ElevatorSim\\ELEVATOR_FIXED.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\edp_assignment\\ElevatorSim\\PROFESSIONAL_DELIVERY.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:ElevatorSim\\PROFESSIONAL_DELIVERY.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 7,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "README_NEW.md",
+              "DocumentMoniker": "D:\\edp_assignment\\ElevatorSim\\README_NEW.md",
+              "RelativeDocumentMoniker": "ElevatorSim\\README_NEW.md",
+              "ToolTip": "D:\\edp_assignment\\ElevatorSim\\README_NEW.md",
+              "RelativeToolTip": "ElevatorSim\\README_NEW.md",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAADMBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2026-05-31T18:59:04.002Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "README_DELIVERY.md",
+              "DocumentMoniker": "D:\\edp_assignment\\ElevatorSim\\README_DELIVERY.md",
+              "RelativeDocumentMoniker": "ElevatorSim\\README_DELIVERY.md",
+              "ToolTip": "D:\\edp_assignment\\ElevatorSim\\README_DELIVERY.md",
+              "RelativeToolTip": "ElevatorSim\\README_DELIVERY.md",
+              "ViewState": "AgIAAG8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2026-05-31T18:58:48.287Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "WELCOME.txt",
+              "DocumentMoniker": "D:\\edp_assignment\\ElevatorSim\\WELCOME.txt",
+              "RelativeDocumentMoniker": "ElevatorSim\\WELCOME.txt",
+              "ToolTip": "D:\\edp_assignment\\ElevatorSim\\WELCOME.txt",
+              "RelativeToolTip": "ElevatorSim\\WELCOME.txt",
+              "ViewState": "AgIAAKUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2026-05-31T18:57:50.677Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "DELIVERY_SUMMARY.txt",
+              "DocumentMoniker": "D:\\edp_assignment\\ElevatorSim\\DELIVERY_SUMMARY.txt",
+              "RelativeDocumentMoniker": "ElevatorSim\\DELIVERY_SUMMARY.txt",
+              "ToolTip": "D:\\edp_assignment\\ElevatorSim\\DELIVERY_SUMMARY.txt",
+              "RelativeToolTip": "ElevatorSim\\DELIVERY_SUMMARY.txt",
+              "ViewState": "AgIAACMBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2026-05-31T18:57:29.275Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "README.md",
+              "DocumentMoniker": "D:\\edp_assignment\\ElevatorSim\\README.md",
+              "RelativeDocumentMoniker": "ElevatorSim\\README.md",
+              "ToolTip": "D:\\edp_assignment\\ElevatorSim\\README.md",
+              "RelativeToolTip": "ElevatorSim\\README.md",
+              "ViewState": "AgIAADAAAAAAAAAAAAAAAEEAAABkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2026-05-31T05:27:16.308Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ElevatorForm.Designer.cs",
+              "DocumentMoniker": "D:\\edp_assignment\\ElevatorSim\\ElevatorForm.Designer.cs",
+              "RelativeDocumentMoniker": "ElevatorSim\\ElevatorForm.Designer.cs",
+              "ToolTip": "D:\\edp_assignment\\ElevatorSim\\ElevatorForm.Designer.cs",
+              "RelativeToolTip": "ElevatorSim\\ElevatorForm.Designer.cs",
+              "ViewState": "AgIAAHMBAAAAAAAAAAAiwIMBAABHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-31T05:26:19.372Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ElevatorSim.csproj",
+              "DocumentMoniker": "D:\\edp_assignment\\ElevatorSim\\ElevatorSim.csproj",
+              "RelativeDocumentMoniker": "ElevatorSim\\ElevatorSim.csproj",
+              "ToolTip": "D:\\edp_assignment\\ElevatorSim\\ElevatorSim.csproj",
+              "RelativeToolTip": "ElevatorSim\\ElevatorSim.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-05-31T05:26:13.961Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Elevator.cs",
+              "DocumentMoniker": "D:\\edp_assignment\\ElevatorSim\\Elevator.cs",
+              "RelativeDocumentMoniker": "ElevatorSim\\Elevator.cs",
+              "ToolTip": "D:\\edp_assignment\\ElevatorSim\\Elevator.cs",
+              "RelativeToolTip": "ElevatorSim\\Elevator.cs",
+              "ViewState": "AgIAANIAAAAAAAAAAAAiwN4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-31T05:29:24.288Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ElevatorForm.cs",
+              "DocumentMoniker": "D:\\edp_assignment\\ElevatorSim\\ElevatorForm.cs",
+              "RelativeDocumentMoniker": "ElevatorSim\\ElevatorForm.cs",
+              "ToolTip": "D:\\edp_assignment\\ElevatorSim\\ElevatorForm.cs",
+              "RelativeToolTip": "ElevatorSim\\ElevatorForm.cs",
+              "ViewState": "AgIAAOwBAAAAAAAAAAAiwPkBAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-31T05:26:28.149Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "FINAL_DELIVERY_REPORT.md",
+              "DocumentMoniker": "D:\\edp_assignment\\ElevatorSim\\FINAL_DELIVERY_REPORT.md",
+              "RelativeDocumentMoniker": "ElevatorSim\\FINAL_DELIVERY_REPORT.md",
+              "ToolTip": "D:\\edp_assignment\\ElevatorSim\\FINAL_DELIVERY_REPORT.md",
+              "RelativeToolTip": "ElevatorSim\\FINAL_DELIVERY_REPORT.md",
+              "ViewState": "AgIAAGkAAAAAAAAAAAAAAGsAAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2026-05-31T05:27:36.852Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "DELIVERY_SUMMARY.md",
+              "DocumentMoniker": "D:\\edp_assignment\\ElevatorSim\\DELIVERY_SUMMARY.md",
+              "RelativeDocumentMoniker": "ElevatorSim\\DELIVERY_SUMMARY.md",
+              "ToolTip": "D:\\edp_assignment\\ElevatorSim\\DELIVERY_SUMMARY.md",
+              "RelativeToolTip": "ElevatorSim\\DELIVERY_SUMMARY.md",
+              "ViewState": "AgIAADYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2026-05-31T05:27:29.597Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\edp_assignment\\ElevatorSim\\Program.cs",
+              "RelativeDocumentMoniker": "ElevatorSim\\Program.cs",
+              "ToolTip": "D:\\edp_assignment\\ElevatorSim\\Program.cs",
+              "RelativeToolTip": "ElevatorSim\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-31T05:26:04.453Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "ELEVATOR_FIXED.md",
+              "DocumentMoniker": "D:\\edp_assignment\\ElevatorSim\\ELEVATOR_FIXED.md",
+              "RelativeDocumentMoniker": "ElevatorSim\\ELEVATOR_FIXED.md",
+              "ToolTip": "D:\\edp_assignment\\ElevatorSim\\ELEVATOR_FIXED.md",
+              "RelativeToolTip": "ElevatorSim\\ELEVATOR_FIXED.md",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2026-05-31T05:25:39.245Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "PROFESSIONAL_DELIVERY.md",
+              "DocumentMoniker": "D:\\edp_assignment\\ElevatorSim\\PROFESSIONAL_DELIVERY.md",
+              "RelativeDocumentMoniker": "ElevatorSim\\PROFESSIONAL_DELIVERY.md",
+              "ToolTip": "D:\\edp_assignment\\ElevatorSim\\PROFESSIONAL_DELIVERY.md",
+              "RelativeToolTip": "ElevatorSim\\PROFESSIONAL_DELIVERY.md",
+              "ViewState": "AgIAAFoAAAAAAAAAAAAAAGkAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2026-05-31T05:12:13.954Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

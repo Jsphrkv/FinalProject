@@ -1,0 +1,203 @@
+﻿namespace ElevatorSim
+{
+    partial class ElevatorForm
+    {
+        private System.ComponentModel.IContainer components = null;
+
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        private void InitializeComponent()
+        {
+            components = new System.ComponentModel.Container();
+            this.Text = "🛗 Elevator Control System";
+            this.Size = new System.Drawing.Size(1400, 850);
+            this.StartPosition = FormStartPosition.CenterScreen;
+            this.BackColor = System.Drawing.Color.FromArgb(220, 220, 220);
+
+            // Main container
+            Panel mainPanel = new Panel();
+            mainPanel.Dock = DockStyle.Fill;
+            mainPanel.Padding = new Padding(20);
+            this.Controls.Add(mainPanel);
+
+            // TOP SECTION: Title
+            Label titleLabel = new Label();
+            titleLabel.Text = "Elevator Control System";
+            titleLabel.Font = new Font("Arial", 20, FontStyle.Bold);
+            titleLabel.Dock = DockStyle.Top;
+            titleLabel.Height = 40;
+            titleLabel.TextAlign = ContentAlignment.MiddleCenter;
+            titleLabel.BackColor = System.Drawing.Color.FromArgb(50, 50, 50);
+            titleLabel.ForeColor = System.Drawing.Color.White;
+            mainPanel.Controls.Add(titleLabel);
+
+            // MIDDLE SECTION: Elevator visualization + Control Panel + Log
+            Panel middleContainer = new Panel();
+            middleContainer.Dock = DockStyle.Fill;
+            middleContainer.Margin = new Padding(0, 10, 0, 0);
+            mainPanel.Controls.Add(middleContainer);
+
+            // LEFT: Elevator cars visualization
+            ElevatorVisualization = new Panel();
+            ElevatorVisualization.Location = new Point(10, 10);
+            ElevatorVisualization.Size = new Size(300, 600);
+            ElevatorVisualization.BackColor = System.Drawing.Color.FromArgb(240, 240, 240);
+            ElevatorVisualization.Paint += ElevatorVisualization_Paint;
+            middleContainer.Controls.Add(ElevatorVisualization);
+
+            // MIDDLE: Control Panel
+            ControlPanel = new Panel();
+            ControlPanel.Location = new Point(320, 10);
+            ControlPanel.Size = new Size(140, 600);
+            ControlPanel.BackColor = System.Drawing.Color.FromArgb(180, 180, 180);
+            ControlPanel.BorderStyle = BorderStyle.Fixed3D;
+            ControlPanel.Paint += ControlPanel_Paint;
+            middleContainer.Controls.Add(ControlPanel);
+
+            // Floor display on control panel
+            CurrentFloorDisplay = new Label();
+            CurrentFloorDisplay.Text = "1";
+            CurrentFloorDisplay.Font = new Font("Arial", 24, FontStyle.Bold);
+            CurrentFloorDisplay.Location = new Point(15, 15);
+            CurrentFloorDisplay.Size = new Size(110, 50);
+            CurrentFloorDisplay.TextAlign = ContentAlignment.MiddleCenter;
+            CurrentFloorDisplay.BorderStyle = BorderStyle.Fixed3D;
+            CurrentFloorDisplay.BackColor = System.Drawing.Color.Black;
+            CurrentFloorDisplay.ForeColor = System.Drawing.Color.Cyan;
+            ControlPanel.Controls.Add(CurrentFloorDisplay);
+
+            // Floor 3 button (top)
+            Button floor3Btn = new Button();
+            floor3Btn.Text = "3";
+            floor3Btn.Font = new Font("Arial", 12, FontStyle.Bold);
+            floor3Btn.Location = new Point(15, 80);
+            floor3Btn.Size = new Size(110, 40);
+            floor3Btn.Tag = 3;
+            floor3Btn.BackColor = System.Drawing.Color.White;
+            floor3Btn.Click += FloorButton_Click;
+            ControlPanel.Controls.Add(floor3Btn);
+            if (FloorButtons == null) FloorButtons = new Button[3];
+            FloorButtons[2] = floor3Btn;
+
+            // Floor 2 button (middle) - G button replaced with 2
+            Button floor2Btn = new Button();
+            floor2Btn.Text = "2";
+            floor2Btn.Font = new Font("Arial", 12, FontStyle.Bold);
+            floor2Btn.Location = new Point(15, 135);
+            floor2Btn.Size = new Size(110, 40);
+            floor2Btn.Tag = 2;
+            floor2Btn.BackColor = System.Drawing.Color.White;
+            floor2Btn.Click += FloorButton_Click;
+            ControlPanel.Controls.Add(floor2Btn);
+            FloorButtons[1] = floor2Btn;
+
+            // Floor 1 button (bottom)
+            Button floor1Btn = new Button();
+            floor1Btn.Text = "1";
+            floor1Btn.Font = new Font("Arial", 12, FontStyle.Bold);
+            floor1Btn.Location = new Point(15, 190);
+            floor1Btn.Size = new Size(110, 40);
+            floor1Btn.Tag = 1;
+            floor1Btn.BackColor = System.Drawing.Color.White;
+            floor1Btn.Click += FloorButton_Click;
+            ControlPanel.Controls.Add(floor1Btn);
+            FloorButtons[0] = floor1Btn;
+
+            // Direction up button
+            Button upBtn = new Button();
+            upBtn.Text = "▲";
+            upBtn.Font = new Font("Arial", 14, FontStyle.Bold);
+            upBtn.Location = new Point(15, 250);
+            upBtn.Size = new Size(50, 50);
+            upBtn.BackColor = System.Drawing.Color.LightGray;
+            ControlPanel.Controls.Add(upBtn);
+
+            // Direction down button
+            Button downBtn = new Button();
+            downBtn.Text = "▼";
+            downBtn.Font = new Font("Arial", 14, FontStyle.Bold);
+            downBtn.Location = new Point(75, 250);
+            downBtn.Size = new Size(50, 50);
+            downBtn.BackColor = System.Drawing.Color.LightGray;
+            ControlPanel.Controls.Add(downBtn);
+
+            // RIGHT: Event Log Table
+            Panel logPanel = new Panel();
+            logPanel.Location = new Point(480, 10);
+            logPanel.Size = new Size(900, 600);
+            logPanel.BackColor = System.Drawing.Color.White;
+            logPanel.BorderStyle = BorderStyle.Fixed3D;
+            middleContainer.Controls.Add(logPanel);
+
+            // Log header
+            Label logHeaderLabel = new Label();
+            logHeaderLabel.Text = "Event Log";
+            logHeaderLabel.Font = new Font("Arial", 12, FontStyle.Bold);
+            logHeaderLabel.Location = new Point(5, 5);
+            logHeaderLabel.Size = new Size(200, 25);
+            logPanel.Controls.Add(logHeaderLabel);
+
+            // Clear log button
+            Button clearLogBtn = new Button();
+            clearLogBtn.Text = "Clear Log";
+            clearLogBtn.Font = new Font("Arial", 10);
+            clearLogBtn.Location = new Point(700, 5);
+            clearLogBtn.Size = new Size(90, 25);
+            clearLogBtn.Click += (s, e) => { if (EventLogDisplay != null) EventLogDisplay.Items.Clear(); };
+            logPanel.Controls.Add(clearLogBtn);
+
+            // Exit button
+            Button exitBtn = new Button();
+            exitBtn.Text = "Exit";
+            exitBtn.Font = new Font("Arial", 10);
+            exitBtn.Location = new Point(800, 5);
+            exitBtn.Size = new Size(90, 25);
+            exitBtn.Click += (s, e) => { this.Close(); };
+            logPanel.Controls.Add(exitBtn);
+
+            // Event log list
+            EventLogDisplay = new ListBox();
+            EventLogDisplay.Location = new Point(5, 35);
+            EventLogDisplay.Size = new Size(890, 560);
+            EventLogDisplay.Font = new Font("Courier New", 9);
+            EventLogDisplay.BackColor = System.Drawing.Color.FromArgb(245, 245, 245);
+            logPanel.Controls.Add(EventLogDisplay);
+        }
+
+        private Label? CurrentFloorDisplay;
+        private Button[]? FloorButtons;
+        private ListBox? EventLogDisplay;
+        private Panel? ElevatorVisualization;
+        private Panel? ControlPanel;
+
+        public Label? GetCurrentFloorDisplay() => CurrentFloorDisplay;
+        public Button[]? GetFloorButtons() => FloorButtons;
+        public ListBox? GetEventLogDisplay() => EventLogDisplay;
+        public Panel? GetElevatorVisualization() => ElevatorVisualization;
+
+        private void FloorButton_Click(object? sender, EventArgs e)
+        {
+            if (sender is Button btn && btn.Tag is int floor)
+            {
+                // This will be handled in the form code-behind
+            }
+        }
+
+        private void ElevatorVisualization_Paint(object? sender, PaintEventArgs e)
+        {
+            // This will be handled in the form code-behind
+        }
+
+        private void ControlPanel_Paint(object? sender, PaintEventArgs e)
+        {
+            // This will be handled in the form code-behind
+        }
+    }
+}

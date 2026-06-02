@@ -1,0 +1,166 @@
+﻿namespace ElevatorSim
+{
+    partial class ElevatorForm
+    {
+        private System.ComponentModel.IContainer components = null;
+
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        private void InitializeComponent()
+        {
+            components = new System.ComponentModel.Container();
+            this.Text = "Event-Driven Elevator Simulator";
+            this.Size = new System.Drawing.Size(900, 700);
+            this.StartPosition = FormStartPosition.CenterScreen;
+            this.BackColor = System.Drawing.Color.FromArgb(240, 240, 240);
+
+            // Main panel
+            Panel mainPanel = new Panel();
+            mainPanel.Dock = DockStyle.Fill;
+            mainPanel.Padding = new Padding(20);
+            this.Controls.Add(mainPanel);
+
+            // Title
+            Label titleLabel = new Label();
+            titleLabel.Text = "Elevator Control System";
+            titleLabel.Font = new Font("Arial", 18, FontStyle.Bold);
+            titleLabel.Dock = DockStyle.Top;
+            titleLabel.Height = 40;
+            titleLabel.TextAlign = ContentAlignment.MiddleCenter;
+            mainPanel.Controls.Add(titleLabel);
+
+            // Elevator display panel
+            Panel elevatorDisplayPanel = new Panel();
+            elevatorDisplayPanel.Dock = DockStyle.Top;
+            elevatorDisplayPanel.Height = 300;
+            elevatorDisplayPanel.Margin = new Padding(0, 20, 0, 20);
+            mainPanel.Controls.Add(elevatorDisplayPanel);
+
+            // Current floor display
+            Label currentFloorLabel = new Label();
+            currentFloorLabel.Text = "Current Floor:";
+            currentFloorLabel.Font = new Font("Arial", 12, FontStyle.Bold);
+            currentFloorLabel.Location = new Point(50, 20);
+            currentFloorLabel.Size = new Size(150, 30);
+            elevatorDisplayPanel.Controls.Add(currentFloorLabel);
+
+            CurrentFloorDisplay = new Label();
+            CurrentFloorDisplay.Text = "1";
+            CurrentFloorDisplay.Font = new Font("Arial", 36, FontStyle.Bold);
+            CurrentFloorDisplay.ForeColor = System.Drawing.Color.FromArgb(0, 100, 200);
+            CurrentFloorDisplay.Location = new Point(200, 10);
+            CurrentFloorDisplay.Size = new Size(150, 50);
+            CurrentFloorDisplay.TextAlign = ContentAlignment.MiddleCenter;
+            CurrentFloorDisplay.BorderStyle = BorderStyle.Fixed3D;
+            elevatorDisplayPanel.Controls.Add(CurrentFloorDisplay);
+
+            // Direction display
+            Label directionLabel = new Label();
+            directionLabel.Text = "Direction:";
+            directionLabel.Font = new Font("Arial", 12, FontStyle.Bold);
+            directionLabel.Location = new Point(50, 80);
+            directionLabel.Size = new Size(150, 30);
+            elevatorDisplayPanel.Controls.Add(directionLabel);
+
+            DirectionDisplay = new Label();
+            DirectionDisplay.Text = "IDLE";
+            DirectionDisplay.Font = new Font("Arial", 14, FontStyle.Bold);
+            DirectionDisplay.ForeColor = System.Drawing.Color.Green;
+            DirectionDisplay.Location = new Point(200, 80);
+            DirectionDisplay.Size = new Size(150, 30);
+            DirectionDisplay.TextAlign = ContentAlignment.MiddleCenter;
+            DirectionDisplay.BorderStyle = BorderStyle.Fixed3D;
+            elevatorDisplayPanel.Controls.Add(DirectionDisplay);
+
+            // Pending requests display
+            Label pendingLabel = new Label();
+            pendingLabel.Text = "Pending Requests:";
+            pendingLabel.Font = new Font("Arial", 12, FontStyle.Bold);
+            pendingLabel.Location = new Point(50, 130);
+            pendingLabel.Size = new Size(150, 30);
+            elevatorDisplayPanel.Controls.Add(pendingLabel);
+
+            PendingRequestsDisplay = new Label();
+            PendingRequestsDisplay.Text = "None";
+            PendingRequestsDisplay.Font = new Font("Arial", 12);
+            PendingRequestsDisplay.Location = new Point(200, 130);
+            PendingRequestsDisplay.Size = new Size(300, 30);
+            PendingRequestsDisplay.BorderStyle = BorderStyle.Fixed3D;
+            elevatorDisplayPanel.Controls.Add(PendingRequestsDisplay);
+
+            // Floor buttons panel
+            Panel floorButtonsPanel = new Panel();
+            floorButtonsPanel.Dock = DockStyle.Top;
+            floorButtonsPanel.Height = 100;
+            floorButtonsPanel.Margin = new Padding(0, 20, 0, 20);
+            mainPanel.Controls.Add(floorButtonsPanel);
+
+            Label floorButtonsLabel = new Label();
+            floorButtonsLabel.Text = "Call Elevator:";
+            floorButtonsLabel.Font = new Font("Arial", 12, FontStyle.Bold);
+            floorButtonsLabel.Location = new Point(0, 10);
+            floorButtonsLabel.Size = new Size(150, 30);
+            floorButtonsPanel.Controls.Add(floorButtonsLabel);
+
+            FloorButtons = new Button[5];
+            for (int i = 1; i <= 5; i++)
+            {
+                Button btn = new Button();
+                btn.Text = $"Floor {i}";
+                btn.Location = new Point(50 + (i - 1) * 110, 50);
+                btn.Size = new Size(100, 40);
+                btn.Font = new Font("Arial", 11, FontStyle.Bold);
+                btn.BackColor = System.Drawing.Color.LightBlue;
+                btn.ForeColor = System.Drawing.Color.Black;
+                btn.Tag = i;
+                btn.Click += FloorButton_Click;
+                floorButtonsPanel.Controls.Add(btn);
+                FloorButtons[i - 1] = btn;
+            }
+
+            // Status log panel
+            Panel statusPanel = new Panel();
+            statusPanel.Dock = DockStyle.Fill;
+            mainPanel.Controls.Add(statusPanel);
+
+            Label logLabel = new Label();
+            logLabel.Text = "Event Log:";
+            logLabel.Font = new Font("Arial", 12, FontStyle.Bold);
+            logLabel.Dock = DockStyle.Top;
+            logLabel.Height = 30;
+            statusPanel.Controls.Add(logLabel);
+
+            EventLogDisplay = new ListBox();
+            EventLogDisplay.Dock = DockStyle.Fill;
+            EventLogDisplay.Font = new Font("Courier New", 10);
+            statusPanel.Controls.Add(EventLogDisplay);
+        }
+
+        private Label? CurrentFloorDisplay;
+        private Label? DirectionDisplay;
+        private Label? PendingRequestsDisplay;
+        private Button[]? FloorButtons;
+        private ListBox? EventLogDisplay;
+
+        public Label? GetCurrentFloorDisplay() => CurrentFloorDisplay;
+        public Label? GetDirectionDisplay() => DirectionDisplay;
+        public Label? GetPendingRequestsDisplay() => PendingRequestsDisplay;
+        public Button[]? GetFloorButtons() => FloorButtons;
+        public ListBox? GetEventLogDisplay() => EventLogDisplay;
+
+        private void FloorButton_Click(object? sender, EventArgs e)
+        {
+            if (sender is Button btn && btn.Tag is int floor)
+            {
+                // This will be handled in the form code-behind
+            }
+        }
+    }
+}

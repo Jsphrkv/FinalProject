@@ -1,0 +1,321 @@
+﻿namespace ElevatorSim
+{
+    public partial class ElevatorForm : Form
+    {
+        private Elevator _elevator;
+        private const int TotalFloors = 3;
+        private int _currentFloor = 1;
+        private bool _doorsOpen = false;
+        private ElevatorDirection _currentDirection = ElevatorDirection.Idle;
+
+        public ElevatorForm()
+        {
+            InitializeComponent();
+            _elevator = new Elevator(TotalFloors);
+            SubscribeToElevatorEvents();
+        }
+
+        private void SubscribeToElevatorEvents()
+        {
+            _elevator.FloorChanged += Elevator_FloorChanged;
+            _elevator.DirectionChanged += Elevator_DirectionChanged;
+            _elevator.RequestAdded += Elevator_RequestAdded;
+            _elevator.ElevatorStopped += Elevator_ElevatorStopped;
+            _elevator.DoorsOpened += Elevator_DoorsOpened;
+            _elevator.DoorsClosed += Elevator_DoorsClosed;
+        }
+
+        private void Elevator_FloorChanged(object? sender, ElevatorEventArgs e)
+        {
+            this.Invoke(() =>
+            {
+                _currentFloor = e.CurrentFloor;
+                var display = GetCurrentFloorDisplay();
+                if (display != null)
+                {
+                    display.Text = e.CurrentFloor.ToString();
+                }
+                var viz = GetElevatorVisualization();
+                if (viz != null) viz.Invalidate();
+                LogEvent($"⬆️  Reached Floor {e.CurrentFloor}");
+                UpdateStatusLabels();
+            });
+        }
+
+        private void Elevator_DirectionChanged(object? sender, ElevatorEventArgs e)
+        {
+            this.Invoke(() =>
+            {
+                _currentDirection = e.Direction;
+                LogEvent($"🔄 Direction: {e.Direction}");
+                UpdateStatusLabels();
+            });
+        }
+
+        private void Elevator_RequestAdded(object? sender, ElevatorEventArgs e)
+        {
+            this.Invoke(() =>
+            {
+                LogEvent($"📍 Request Added: Floor {e.CurrentFloor}");
+                HighlightFloorButton(e.CurrentFloor, true);
+            });
+        }
+
+        private void Elevator_ElevatorStopped(object? sender, ElevatorEventArgs e)
+        {
+            this.Invoke(() =>
+            {
+                LogEvent($"🛑 Elevator Stopped at Floor {e.CurrentFloor}");
+                UpdateStatusLabels();
+            });
+        }
+
+        private void Elevator_DoorsOpened(object? sender, ElevatorEventArgs e)
+        {
+            this.Invoke(() =>
+            {
+                _doorsOpen = true;
+                var viz = GetElevatorVisualization();
+                if (viz != null) viz.Invalidate();
+                LogEvent($"🚪 Doors Opened at Floor {e.CurrentFloor}");
+                UpdateStatusLabels();
+            });
+        }
+
+        private void Elevator_DoorsClosed(object? sender, ElevatorEventArgs e)
+        {
+            this.Invoke(() =>
+            {
+                _doorsOpen = false;
+                HighlightFloorButton(e.CurrentFloor, false);
+                var viz = GetElevatorVisualization();
+                if (viz != null) viz.Invalidate();
+                LogEvent($"🚪 Doors Closed - Continuing...");
+                UpdateStatusLabels();
+            });
+        }
+
+        private void UpdateStatusLabels()
+        {
+            var dirLabel = GetStatusDirectionLabel();
+            var doorLabel = GetStatusDoorLabel();
+
+            if (dirLabel != null)
+            {
+                string dirText = _currentDirection switch
+                {
+                    ElevatorDirection.Up => "STATUS: MOVING UP ↑",
+                    ElevatorDirection.Down => "STATUS: MOVING DOWN ↓",
+                    _ => "STATUS: IDLE"
+                };
+                dirLabel.Text = dirText;
+            }
+
+            if (doorLabel != null)
+            {
+                doorLabel.Text = _doorsOpen ? "DOORS: OPEN" : "DOORS: CLOSED";
+            }
+        }
+
+        private void HighlightFloorButton(int floor, bool highlight)
+        {
+            var buttons = GetFloorButtons();
+            if (buttons != null && floor >= 1 && floor <= buttons.Length)
+            {
+                var btn = buttons[floor - 1];
+                if (highlight)
+                {
+                    btn.BackColor = System.Drawing.Color.FromArgb(255, 200, 0);
+                    btn.ForeColor = System.Drawing.Color.Black;
+                }
+                else
+                {
+                    btn.BackColor = System.Drawing.Color.FromArgb(60, 120, 180);
+                    btn.ForeColor = System.Drawing.Color.White;
+                }
+            }
+        }
+
+        private void LogEvent(string message)
+        {
+            var eventLog = GetEventLogDisplay();
+            if (eventLog != null)
+            {
+                string timestamp = DateTime.Now.ToString("HH:mm:ss");
+                eventLog.Items.Insert(0, $"[{timestamp}] {message}");
+
+                // Keep only last 200 events
+                while (eventLog.Items.Count > 200)
+                {
+                    eventLog.Items.RemoveAt(eventLog.Items.Count - 1);
+                }
+            }
+        }
+
+        protected override void OnLoad(EventArgs e)
+        {
+            base.OnLoad(e);
+
+            // Hook up button clicks
+            var buttons = GetFloorButtons();
+            if (buttons != null)
+            {
+                foreach (var btn in buttons)
+                {
+                    btn.Click += (s, e) =>
+                    {
+                        if (s is Button button && button.Tag is int floor)
+                        {
+                            _elevator.RequestFloor(floor);
+                        }
+                    };
+                }
+            }
+
+            // Hook up paint events
+            var viz = GetElevatorVisualization();
+            if (viz != null)
+            {
+                viz.Paint += (s, e) => DrawElevatorVisualization(e.Graphics);
+            }
+
+            LogEvent("✅ Elevator System Started");
+            LogEvent("Select a floor to call the elevator");
+            UpdateStatusLabels();
+        }
+
+        private void DrawElevatorVisualization(Graphics g)
+        {
+            var viz = GetElevatorVisualization();
+            if (viz == null) return;
+
+            int width = viz.Width;
+            int height = viz.Height;
+
+            // Background
+            g.Clear(System.Drawing.Color.FromArgb(40, 40, 50));
+
+            // Title
+            using (Font titleFont = new Font("Courier New", 12, FontStyle.Bold))
+            using (Brush titleBrush = new SolidBrush(System.Drawing.Color.Cyan))
+            {
+                g.DrawString("ELEVATOR SHAFT", titleFont, titleBrush, 20, 10);
+            }
+
+            // Draw 3 floor sections with proper layout
+            int elevatorWidth = 120;
+            int elevatorHeight = 100;
+            int elevatorX = (width - elevatorWidth) / 2;
+            int floorSpacing = (height - 80) / 3;
+
+            // Draw floors from top to bottom: 3, 2, 1
+            for (int floor = 3; floor >= 1; floor--)
+            {
+                int yPos = 60 + ((3 - floor) * floorSpacing);
+                bool isCurrentFloor = (_currentFloor == floor);
+
+                // Draw floor background
+                using (Brush floorBgBrush = new SolidBrush(isCurrentFloor ? 
+                    System.Drawing.Color.FromArgb(60, 90, 130) : 
+                    System.Drawing.Color.FromArgb(40, 60, 90)))
+                {
+                    g.FillRectangle(floorBgBrush, 10, yPos, width - 20, floorSpacing - 10);
+                }
+
+                // Draw floor separator line
+                using (Pen linePen = new Pen(System.Drawing.Color.FromArgb(100, 150, 200), 2))
+                {
+                    g.DrawLine(linePen, 10, yPos + floorSpacing - 10, width - 10, yPos + floorSpacing - 10);
+                }
+
+                // Draw floor label on left
+                using (Font floorFont = new Font("Courier New", 16, FontStyle.Bold))
+                using (Brush floorBrush = new SolidBrush(isCurrentFloor ? System.Drawing.Color.Lime : System.Drawing.Color.Cyan))
+                {
+                    g.DrawString($"F{floor}", floorFont, floorBrush, 15, yPos + 20);
+                }
+
+                // Draw elevator car if on this floor
+                if (isCurrentFloor)
+                {
+                    // Elevator shaft background
+                    using (Brush shaftBrush = new SolidBrush(System.Drawing.Color.FromArgb(20, 20, 30)))
+                    {
+                        g.FillRectangle(shaftBrush, elevatorX - 10, yPos + 10, elevatorWidth + 20, elevatorHeight);
+                    }
+
+                    // Elevator car border
+                    using (Pen borderPen = new Pen(System.Drawing.Color.Cyan, 3))
+                    {
+                        g.DrawRectangle(borderPen, elevatorX, yPos + 15, elevatorWidth, elevatorHeight - 10);
+                    }
+
+                    // Elevator car fill
+                    using (Brush carBrush = new SolidBrush(System.Drawing.Color.FromArgb(80, 120, 160)))
+                    {
+                        g.FillRectangle(carBrush, elevatorX + 1, yPos + 16, elevatorWidth - 2, elevatorHeight - 12);
+                    }
+
+                    if (_doorsOpen)
+                    {
+                        // Draw OPEN doors
+                        using (Brush doorBrush = new SolidBrush(System.Drawing.Color.FromArgb(110, 150, 190)))
+                        {
+                            int doorWidth = (elevatorWidth - 8) / 2;
+                            // Left door
+                            g.FillRectangle(doorBrush, elevatorX + 2, yPos + 20, doorWidth, elevatorHeight - 20);
+                            // Right door
+                            g.FillRectangle(doorBrush, elevatorX + doorWidth + 6, yPos + 20, doorWidth, elevatorHeight - 20);
+                        }
+
+                        // Door gap indicator
+                        using (Pen gapPen = new Pen(System.Drawing.Color.Yellow, 2))
+                        {
+                            g.DrawLine(gapPen, elevatorX + elevatorWidth / 2, yPos + 20, elevatorX + elevatorWidth / 2, yPos + elevatorHeight - 10);
+                        }
+                    }
+                    else
+                    {
+                        // Draw CLOSED doors
+                        using (Brush doorBrush = new SolidBrush(System.Drawing.Color.FromArgb(100, 140, 180)))
+                        {
+                            g.FillRectangle(doorBrush, elevatorX + 2, yPos + 20, elevatorWidth - 4, elevatorHeight - 20);
+                        }
+
+                        // Door split line
+                        using (Pen doorPen = new Pen(System.Drawing.Color.FromArgb(60, 100, 140), 2))
+                        {
+                            g.DrawLine(doorPen, elevatorX + elevatorWidth / 2, yPos + 20, elevatorX + elevatorWidth / 2, yPos + elevatorHeight - 10);
+                        }
+                    }
+
+                    // Floor number inside elevator
+                    using (Font floorFont = new Font("Courier New", 28, FontStyle.Bold))
+                    using (Brush floorBrush = new SolidBrush(System.Drawing.Color.Lime))
+                    {
+                        SizeF textSize = g.MeasureString(floor.ToString(), floorFont);
+                        float textX = elevatorX + (elevatorWidth - textSize.Width) / 2;
+                        float textY = yPos + 30;
+                        g.DrawString(floor.ToString(), floorFont, floorBrush, textX, textY);
+                    }
+
+                    // Direction indicator
+                    if (_currentDirection != ElevatorDirection.Idle)
+                    {
+                        string dirChar = _currentDirection == ElevatorDirection.Up ? "↑" : "↓";
+                        using (Font dirFont = new Font("Courier New", 20, FontStyle.Bold))
+                        using (Brush dirBrush = new SolidBrush(System.Drawing.Color.Yellow))
+                        {
+                            g.DrawString(dirChar, dirFont, dirBrush, elevatorX + elevatorWidth + 5, yPos + 40);
+                        }
+                    }
+                }
+            }
+        }
+
+        protected override void OnClosed(EventArgs e)
+        {
+            base.OnClosed(e);
+        }
+    }
+}
